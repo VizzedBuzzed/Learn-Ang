@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:obfuscate": "ng build --plugin ~custom-webpack.config",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -23,6 +24,8 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^16.0.0",
+    "@angular-builders/dev-server": "^7.3.1",
     "@angular-devkit/build-angular": "^16.1.1",
     "@angular/cli": "~16.1.1",
     "@angular/compiler-cli": "^16.1.0",
@@ -33,6 +36,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.1.3"
+    "typescript": "~5.1.3",
+    "webpack-obfuscator": "^3.5.1"
   }
 }
