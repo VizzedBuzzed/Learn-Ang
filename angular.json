@@ -14,8 +14,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "./custom-webpack.config.js",
-              "replaceDuplicatePlugins": true
+              "path": "./custom-webpack.config.js"
             },
             "outputPath": "dist/my-app",
             "index": "src/index.html",
@@ -36,6 +35,10 @@
           "configurations": {
             "production": {
               "optimization": true,
+              "buildOptimizer": true,
+              "vendorChunk": true,
+              "extractLicenses": true,
+              "namedChunks": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -63,6 +66,9 @@
         },
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "my-app:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "my-app:build:production"
